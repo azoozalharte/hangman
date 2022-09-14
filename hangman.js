@@ -1,3 +1,4 @@
+"use strict";
 const Hangman = function (word, number, guessedLetters) {
   this.word = word.toLowerCase().split("");
   this.number = number;
@@ -22,5 +23,5 @@ Hangman.prototype.getPuzzle = function () {
   return puzzle;
 };
 
-const word1 = new Hangman("red car", 3, "rcv");
+const word1 = new Hangman("abdulaziz", 3, "azibd");
 console.log(word1.getPuzzle());
