@@ -1,18 +1,14 @@
 "use strict";
-const Hangman = function (word, number, guessedLetters) {
+const Hangman = function (word, number) {
   this.word = word.toLowerCase().split("");
   this.number = number;
-  this.guessedLetters = guessedLetters;
+  this.guessedLetters = [];
 };
-// car
-// ***
-// azo alharte
-// *** *******
+
 Hangman.prototype.getPuzzle = function () {
-  let guessedLetterArr = this.guessedLetters.toLowerCase().split("");
   let puzzle = "";
   this.word.map((val) => {
-    if (guessedLetterArr.includes(val)) {
+    if (this.guessedLetters.includes(val)) {
       puzzle += val;
     } else if (val != " ") {
       puzzle += "*";
@@ -23,5 +19,5 @@ Hangman.prototype.getPuzzle = function () {
   return puzzle;
 };
 
-const word1 = new Hangman("abdulaziz", 3, "azibd");
+const word1 = new Hangman("abdulaziz", 3);
 console.log(word1.getPuzzle());
