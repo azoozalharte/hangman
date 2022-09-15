@@ -1,4 +1,4 @@
-"use strict";
+("use strict");
 const Hangman = function (word, numberOfGuesses) {
   this.word = word.toLowerCase().split("");
   this.numberOfGuesses = numberOfGuesses;
@@ -29,13 +29,3 @@ Hangman.prototype.makeGuess = function (letter) {
     this.getPuzzle();
   }
 };
-
-const word1 = new Hangman("abdulaziz", 3);
-console.log(word1.getPuzzle());
-console.log(word1.numberOfGuesses);
-window.addEventListener("keypress", function (e) {
-  const guess = e.key;
-  word1.makeGuess(guess);
-  console.log(word1.getPuzzle());
-  console.log(word1.numberOfGuesses);
-});
