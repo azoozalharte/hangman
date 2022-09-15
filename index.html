@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="main">
       <p id="guess-word"></p>
-      <p id="guesses-left"></p>
+      <p>----------</p>
+      <div class="guesses-numbers">
+        <p>عدد المحاولات</p>
+        <span>|</span>
+        <p id="guesses-left"></p>
+      </div>
+    </div>
+
+    <!-- الحروف الصحيحه -->
+    <div class="correct-letters">
+      <p>الحروف الصحيحه:</p>
+    </div>
+    <!-- الحروف الغير صحيحه -->
+
+    <div class="uncorrect-letters">
+      <p>الحروف الخاطئه:</p>
     </div>
     <script src="hangman.js"></script>
     <script src="app.js"></script>
