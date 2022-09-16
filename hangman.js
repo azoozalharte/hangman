@@ -8,12 +8,21 @@ const Hangman = function (word, numberOfGuesses) {
 
 Hangman.prototype.playingStatus = function () {
   if (this.numberOfGuesses === 0) {
-    this.status = "failed";
-    console.log(this.status);
+    return (this.status = "failed");
   } else if (this.word.join("") === this.getPuzzle()) {
-    this.status = "finished";
+    return (this.status = "finished");
   } else {
-    console.log(this.status);
+    return this.status;
+  }
+};
+
+Hangman.prototype.statusMessage = function () {
+  if (this.status === "failed") {
+    return `خسرت التحدي الكلمة هي  "${this.word.join("")}"`;
+  } else if (this.status === "finished") {
+    return "أهنيك أكتشفت الكلمة";
+  } else {
+    return "";
   }
 };
 
@@ -33,6 +42,9 @@ Hangman.prototype.getPuzzle = function () {
 
 Hangman.prototype.makeGuess = function (letter) {
   letter = letter.toLowerCase();
+  if (this.status != "playing") {
+    return;
+  }
   if (!this.guessedLetters.includes(letter)) {
     if (!this.word.includes(letter)) {
       const uncorrectLetter = document.createElement("p");

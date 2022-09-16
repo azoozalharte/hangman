@@ -54,3 +54,9 @@ body {
   bottom: 3%;
   left: 10%;
 }
+
+.status-message {
+  position: absolute;
+  top: 25%;
+  color: aliceblue;
+}
