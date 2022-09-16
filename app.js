@@ -65,7 +65,7 @@ const array = [
 
 const randomElement = array[Math.floor(Math.random() * array.length)];
 
-const word1 = new Hangman(randomElement, 3);
+const word1 = new Hangman(randomElement, randomElement.length - 1);
 
 domGuessWord.innerHTML = word1.getPuzzle;
 domGuessLeft.innerHTML = word1.numberOfGuesses;
