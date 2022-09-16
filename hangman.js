@@ -9,13 +9,13 @@ class Hangman {
   playingStatus() {
     if (this.numberOfGuesses === 0) {
       return (this.status = "failed");
-    } else if (this.word.join("") === this.getPuzzle()) {
+    } else if (this.word.join("") === this.getPuzzle) {
       return (this.status = "finished");
     } else {
       return this.status;
     }
   }
-  statusMessage() {
+  get statusMessage() {
     if (this.status === "failed") {
       return `خسرت التحدي الكلمة هي  "${this.word.join("")}"`;
     } else if (this.status === "finished") {
@@ -24,7 +24,7 @@ class Hangman {
       return "";
     }
   }
-  getPuzzle() {
+  get getPuzzle() {
     let puzzle = "";
     this.word.map((val) => {
       if (this.guessedLetters.includes(val)) {
@@ -56,7 +56,7 @@ class Hangman {
         document.querySelector(".correct-letters").appendChild(correctLetter);
       }
       this.guessedLetters.push(letter);
-      this.getPuzzle();
+      this.getPuzzle;
     }
 
     this.playingStatus();
