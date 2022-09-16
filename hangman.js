@@ -3,6 +3,18 @@ const Hangman = function (word, numberOfGuesses) {
   this.word = word.toLowerCase().split("");
   this.numberOfGuesses = numberOfGuesses;
   this.guessedLetters = [];
+  this.status = "playing";
+};
+
+Hangman.prototype.playingStatus = function () {
+  if (this.numberOfGuesses === 0) {
+    this.status = "failed";
+    console.log(this.status);
+  } else if (this.word.join("") === this.getPuzzle()) {
+    this.status = "finished";
+  } else {
+    console.log(this.status);
+  }
 };
 
 Hangman.prototype.getPuzzle = function () {
@@ -35,4 +47,6 @@ Hangman.prototype.makeGuess = function (letter) {
     this.guessedLetters.push(letter);
     this.getPuzzle();
   }
+
+  this.playingStatus();
 };
